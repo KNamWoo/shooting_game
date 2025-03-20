@@ -8,6 +8,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public bool isTouchRight;
     public bool isTouchLeft;
 
+    Animator anim;
+
+    public void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Update()
     {
@@ -25,6 +32,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
         Vector3 nextPos = new Vector3(h, v, 0) * speed * Time.deltaTime;
 
         transform.position = curPos + nextPos;
+
+        if (Input.GetButtonDown("Horizontal")||Input.GetButtonUp("Horizontal"))
+        {
+            anim.SetInteger("Input", (int)h);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -36,13 +48,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
                     isTouchTop = true;
                     break;
                 case "Bottom_Border":
-                    isTouchTop = true;
+                    isTouchBottom = true;
                     break;
                 case "Left_Border":
-                    isTouchTop = true;
+                    isTouchLeft = true;
                     break;
                 case "Right_Border":
-                    isTouchTop = true;
+                    isTouchRight = true;
                     break;
             }
         }
@@ -57,13 +69,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
                     isTouchTop = false;
                     break;
                 case "Bottom_Border":
-                    isTouchTop = false;
+                    isTouchBottom = false;
                     break;
                 case "Left_Border":
-                    isTouchTop = false;
+                    isTouchLeft = false;
                     break;
                 case "Right_Border":
-                    isTouchTop = false;
+                    isTouchRight = false;
                     break;
             }
         }
