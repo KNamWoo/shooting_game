@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 6
   m_Sprite: {fileID: -1147401495359466748, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -187,13 +187,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: M
-  speed: 2
+  speed: 8
   health: 20
+  enemyScore: 15
   maxBulCool: 1.3
   curBulCool: 0
+  OnFire: 0
   sprites:
   - {fileID: -1147401495359466748, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   - {fileID: -7844560889915226194, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   BulletObjA: {fileID: 5784443264776116906, guid: 60d4d52673ce3354f89f73caca13bf5f, type: 3}
   BulletObjB: {fileID: 5784443264776116906, guid: ca29f257692d7764ba2fae80e9a9230e, type: 3}
+  itemCoin: {fileID: 4783769874550112849, guid: 44ec9a1bfaede0f4f98db27f7e2e6081, type: 3}
+  itemPower: {fileID: 3858640710070845046, guid: fc8222a1fe173e14aaa7e7d19e3309f5, type: 3}
+  itemBoom: {fileID: 4163044485808446553, guid: e24fa459bde95484495a1e66799b08f5, type: 3}
   player: {fileID: 0}
