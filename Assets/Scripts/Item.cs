@@ -3,11 +3,13 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public string type;
-    Rigidbody2D rigid;
+    Rigidbody2D rbody;
 
-    void Awake()
-    {
-        rigid = GetComponent<Rigidbody2D>();
-        rigid.linearVelocity = Vector2.down * 3;
+    private void Awake() {
+        rbody = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable() {
+        rbody.linearVelocity=Vector2.down*3f;
     }
 }
